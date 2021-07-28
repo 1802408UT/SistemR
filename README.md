@@ -1,7 +1,11 @@
 # Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
-Lee el archivo de Instrucciones para saber como iniciarlizar el proyecto
+
+## IMPORTANTE
+
+Lee el archivo de Instrucciones.txt para saber como inicializar el proyecto.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
