@@ -18,22 +18,23 @@
         </table>
 
     </div>
+</ng-container>
 
+<ng-container *ngIf="!isUser">
+    <section id="hero" class="d-flex align-items-center">
 
-    <ng-container *ngIf="!isUser">
-        <section id="hero" class="d-flex align-items-center">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-                        <h1>La mejor experiencia Digital con <br> SistemaR</h1>
-                        <h2>Somos un equipo que busca siempre darte los mejores servicios y productos a los mejores precios.</h2>
-                        <a routerLink="/login" class="btn-get-started scrollto">Login</a>
-                    </div>
-                    <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                        <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
+                    <h1>La mejor experiencia Digital con <br> SistemaR</h1>
+                    <h2>Somos un equipo que busca siempre darte los mejores servicios y productos a los mejores precios.</h2>
+                    <a routerLink="/login" class="btn-get-started scrollto">Login</a>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
                 </div>
             </div>
-        </section>
-    </ng-container>
+        </div>
+    </section>
+
+</ng-container>

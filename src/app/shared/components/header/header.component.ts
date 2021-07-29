@@ -20,6 +20,7 @@ import { UtilsService } from './../../services/utils.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   isAdmin = null;
   isLogged = false;
+  //isUser = false;
 
   private destroy$ = new Subject<any>();
 
@@ -31,8 +32,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authSvc.user$
       .pipe(takeUntil(this.destroy$))
       .subscribe((user: UserResponse) => {
-        this.isLogged = true;
+        this.isLogged = false;
         this.isAdmin = user?.role;
+    //    this.isUser = false;
       });
   }
 
@@ -48,5 +50,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onLogout(): void {
     this.authSvc.logout();
     this.utilsSvc.openSidebar(false);
+    this.isLogged = true;
+    //this.isUser = true;
   }
 }

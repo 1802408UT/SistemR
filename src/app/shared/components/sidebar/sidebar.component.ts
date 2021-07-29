@@ -15,5 +15,6 @@ export class SidebarComponent implements OnInit {
   onExit(): void {
     this.authSvc.logout();
     this.utilsSvc.openSidebar(false);
+    
   }
 }
