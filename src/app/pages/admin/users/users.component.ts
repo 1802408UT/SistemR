@@ -41,7 +41,7 @@ export class UsersComponent implements AfterViewInit, OnInit, OnDestroy {
         .delete(userId)
         .pipe(takeUntil(this.destroy$))
         .subscribe((res) => {
-          window.alert(res);
+          console.log(res);
           // Update result after deleting the user.
           this.userSvc.getAll().subscribe((users) => {
             this.dataSource.data = users;
