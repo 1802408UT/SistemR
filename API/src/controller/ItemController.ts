@@ -45,7 +45,6 @@ export class ItemController {
         if (errors.length > 0) {
             return res.status(400).json(errors)
         }
-        //Todo: HASH PASSWORD
 
         const userRepository = getRepository(Items);
         try {

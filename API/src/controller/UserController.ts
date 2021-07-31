@@ -86,6 +86,7 @@ export class UserController {
       await userRepository.save(user);
     } catch (e) {
       return res.status(409).json({ message: 'Username already in use' });
+      
     }
 
     res.status(201).json({ message: 'User update' });
@@ -104,7 +105,7 @@ export class UserController {
 
     // Remove user
     userRepository.delete(id);
-    res.status(201).json({ message: ' User deleted' });
+    res.status(201).json({ message: 'User deleted' });
   };
 }
 
