@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AdminInterceptor } from '@shared/interceptors/admin-interceptor';
 
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [

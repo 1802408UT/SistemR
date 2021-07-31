@@ -12,7 +12,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-//import { MatTableExportModule } from '@angular/material/table';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 
 const myModules = [
   MatToolbarModule,
@@ -28,7 +32,9 @@ const myModules = [
   MatDialogModule,
   MatOptionModule,
   MatSelectModule,
- // MatTableExportModule
+  MatTableExporterModule,
+  MatPaginatorModule,
+  MatFormFieldModule
 ];
 
 @NgModule({

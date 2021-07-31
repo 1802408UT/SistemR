@@ -2,22 +2,39 @@
     <h1 class="w3-container">Bienvenido, {{ user?.username || 'User' }}.</h1>
 
     <div class="w3-container">
-        <table class="w3-table-all w3-card-4">
-            <tr>
-                <th>Id</th>
-                <th>Reporte</th>
-                <th>Descripción del Reporte</th>
-                <th>Movimiento</th>
-            </tr>
-            <tr *ngFor="let product of products">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.price}}</td>
-            </tr>
-        </table>
+
+        <mat-table class="w3-table-all w3-card-4" matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" [hiddenColumns]="[0]">
+
+            <ng-container matColumnDef="position">
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="surname">
+                <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="birth">
+                <mat-header-cell *matHeaderCellDef> Birth </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.birth}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
 
     </div>
+    <button mat-raised-button (click)="exporter.exportTable('xlsx', {fileName:'test', sheet: 'sheet_name', Props: {Author: 'Talha'}})">Excel</button>
+    <button mat-raised-button (click)="exporter.exportTable('csv')">Csv</button>
+    <button mat-raised-button (click)="exporter.exportTable('json')">Json</button>
+    <button mat-raised-button (click)="exporter.exportTable('txt')">Txt</button>
+
 </ng-container>
 
 <ng-container *ngIf="!isUser">
@@ -27,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
                     <h1>La mejor experiencia Digital con <br> SistemaR</h1>
-                    <h2>Somos un equipo que busca siempre darte los mejores servicios y productos a los mejores precios.</h2>
+                    <h2>Somos un equipo que busca siempre darte los mejores servicios y productsos a los mejores precios.</h2>
                     <a routerLink="/login" class="btn-get-started scrollto">Login</a>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img">
